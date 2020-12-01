@@ -14,7 +14,7 @@ while True:
         for i in range(0,len(strtosend)):
             b = int(ord(key[i]))-60
             stout += chr(int(ord(strtosend[i]))+b)
-        finalmsg = stout + "/#100101#/" + key1
+        finalmsg = stout + "/#&0#/" + key1
         file1 = open("message.msg","w")
         file1.writelines(finalmsg)
         file1.close()
@@ -22,7 +22,7 @@ while True:
     if "recieve"in ix:
         file1 = open("message.msg","r")
         L = []
-        L = file1.readline().split("/#100101#/")
+        L = file1.readline().split("/#&0#/")
         strtosend,key = L[0],L[1]
         if len(key) < len(strtosend):
             key = key * (len(strtosend) // len(key))
